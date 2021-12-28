@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: SAI
+    password: sai
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+ 
+ eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost  
+    
+microservice:
+  citizen-service:
+   endpoints:
+    endpoint:
+     uri:http://citizen-service/citizen/getCitizensByCenterId
